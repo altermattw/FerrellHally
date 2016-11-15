@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width">
+	  	<link href="../../../css/bootstrap.css" rel="stylesheet" media="screen">
+	  	<link href="../../../css/bootstrap-theme.css" rel="stylesheet" media="screen">
+	  	<link href="../../../css/styles.css" rel="stylesheet" media="screen">
+		<script src="../../../js/jquery-1.10.2.min.js"></script>
+		<script src="../../../js/bootstrap.min.js"></script>
+		<title>Informed Consent</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="page-header">
+						<h3>Informed Consent Form</h3>
+					</div>
+				</div>
+				<div class="col-md-8 col-md-offset-2">
+					<p>
+						This research project is being conducted by Brittany Ferrell and Jake Hally, students in the Psychology Advanced Research course at Hanover College. The experiment in which you are asked to participate is designed to examine predictors of behavior at different times during the semester. You will take a survey on your habits and routines. Once you have completed all the questions, you will be debriefed.
+					</p>
+					<p>
+						The entire study will take no longer than 30 minutes. There are no known risks involved in being in this study, beyond those of everyday life. The information you provide during the experiment is completely anonymous; at no time will your name be associated with the responses you give. If you have any questions about what you will be doing in the study or about the study itself, feel free to ask them now or at any other time during your participation.
+					</p>
+					<p>
+						If you have any questions now or after the study, please contact:
+						<ul>
+							<li>For questions about the research itself, you may contact the researchers: Brittany Ferrell at ferrellb17@hanover.edu and Jake Hally at hallyj17@hanover.edu. </li>
+							<li>For questions about your rights as a participant in this research, you may contact the faculty member supervising the research, Dr. Bill Altermatt, at altermattw@hanover.edu, or the chair of Hanover College&rsquo;s Institutional Review Board, Dean Jacks, at jacks@hanover.edu.</li>
+						</ul>
+					</p>
+					<p>
+						Participation in this study is voluntary. Refusing to participate or ceasing to participate at any time will involve no penalty. Incomplete participation will not result in credit for participating, but you may complete an alternative assignment of equal time commitment in order to receive credit. Please print this screen if you would like to keep a copy of this informed consent form.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<p><strong>Please check one:</strong></p>
+          <label class="radio">
+            <input type="radio" name="informedConsent" class="consent" id="no" value="no" checked required>
+            I do not consent to participate in this study.
+          </label>
+          <label class="radio">
+            <input type="radio" name="informedConsent" class="consent" id="yes" value="yes" required>
+            I consent to participate in this study.
+          </label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="text-center">
+					<form action="survey.php" method="post">
+						<button type="submit" id="Continue" class="btn btn-primary btn-lg" disabled>Continue</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+	$(document).ready(function(){
+		$("input[type='radio']").change( function() {
+        var value = $(this).val();
+        if (value == "yes") {
+          $("#Continue").prop('disabled',false);
+        } else {
+          $("#Continue").prop('disabled',true);
+        }
+      });
+		});
+	</script>
+</html>
